@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "opd-sql-agent"
+version = "0.1.0"
+description = "Reproducible Text-to-SQL baselines and on-policy distillation experiments"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+# Local HF inference only. The audited GPU experiment uses the exact versions
+# and CUDA extensions in scripts/server/requirements.txt, not this loose extra.
+model = ["torch>=2.11", "transformers>=5.18", "accelerate>=1.15", "peft>=0.21.2", "safetensors>=0.4"]
+dev = ["pytest>=8"]
+ssh = ["paramiko>=3.5"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

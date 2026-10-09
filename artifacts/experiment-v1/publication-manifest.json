@@ -1,0 +1,68 @@
+{
+  "format": "public-publication-manifest-v1",
+  "experiment": "experiment-v1",
+  "scope": "Portable derived statistics, membership/paired IDs and hashes only. No model weights, BIRD text/SQL/schema/database content, credentials or SSH host files.",
+  "original_source_sha256": {
+    "effect-600-internal-comparison.json": "12291fbe87fbadad67a93061fdcfbfb82ae1d052928c7c549c232452ae98b7ed",
+    "effect-dataset-manifest.json": "8a3e48be148439198a8308829ebfffd4830ae8827a005fbd167418770817af25",
+    "effect-summary.json": "7e58e0228f2099731e16d61640c1a3976653f140813b807c6959554844f1a0a7",
+    "effect-eligible-pool-manifest.json": "9bf45e5464f4e26d612f2e078c22bb539fc488609ec6704ed2f7bae504d19c15",
+    "effect-test-base-report.json": "cc3550eb6f7b7453fff66cef36e373c652f6f199e39e77981a290c90e8cbd40b",
+    "effect-test-teacher-report.json": "ece2f08b64955d4cb2c2856e8abd6c4949abc72e0e3aebf89c0cd7452a10774e",
+    "effect-test-warm-report.json": "2829685103b2fec305f84f1e20fde432629fbfa12d7ec74f103f972bfa97ca7a",
+    "effect-test-continued-sft-report.json": "bac29f898bdd7f825d36fe66b3a9fd3237cf1fabf833e2bcb74d962b4b9b9500",
+    "effect-test-opd-report.json": "58e7c7f13e04739c52c8ccb91fa1aebca0dff520cc847cbbbe37285ad46f0c92",
+    "effect-frozen-selection.json": "3f8f883c66b06b768aa8fa2c482be71247b84c2e58a1b43343bddd3bf5b9ab37"
+  },
+  "published_files": {
+    "artifacts/experiment-v1/600-internal-comparison.json": {
+      "bytes": 10601,
+      "sha256": "13bb7d931cb3bb3ace54eea83eb259f2e82ab9a4832b050f0e907f7c3aa84ffb"
+    },
+    "artifacts/experiment-v1/dataset-manifest.json": {
+      "bytes": 264820,
+      "sha256": "ac24a2fa367b98b1012499f2046daccb3b02f9cfa73078a37ee2ceb588a855a5"
+    },
+    "artifacts/experiment-v1/effect-summary.json": {
+      "bytes": 24160,
+      "sha256": "e7cdac71c727e8ac120ab4db69dd3dc05990bb324b4716775c55cc5be1961ebd"
+    },
+    "artifacts/experiment-v1/eligible-pool-manifest.json": {
+      "bytes": 134925,
+      "sha256": "e9ea217d78614f63a1c2c23c871081bbf889b03a96190fc6fa310819accfb88c"
+    },
+    "artifacts/experiment-v1/final-arm-metrics.json": {
+      "bytes": 349315,
+      "sha256": "352613b4e2a69d38f8799f57c5fa612f245c2d94e67f3933e8e97f513fa4b932"
+    },
+    "artifacts/experiment-v1/frozen-selection.json": {
+      "bytes": 2061,
+      "sha256": "e895db5a801a3411908fc1ac7e18bd8a4087da8808adf3bac9920337f45bc0fb"
+    },
+    "artifacts/experiment-v1/plot_results.py": {
+      "bytes": 3559,
+      "sha256": "7bb43942d7166447548a32642da5ea31e0ab517849179d0abdc26ecf9c6193ad"
+    },
+    "artifacts/experiment-v1/README.md": {
+      "bytes": 6785,
+      "sha256": "9d302046613a216729ae280339c8a0fe992d58deec12baee6da257f10df9c250"
+    },
+    "artifacts/experiment-v1/verify_results.py": {
+      "bytes": 4413,
+      "sha256": "94ad91fc980b246b2096b81e5a72dcb2d1ec252669dff060189822fc4ed5d036"
+    },
+    "assets/results.png": {
+      "bytes": 129422,
+      "sha256": "32be14ef1500d308732d85d3bc6596082bd096fee0911cb90154d52180f30ae0"
+    },
+    "assets/results.svg": {
+      "bytes": 10760,
+      "sha256": "17381b3df424d3ba0ef903b1f69ca29204e3c760b47de4a058726aaabef10ca1"
+    },
+    "docs/results.md": {
+      "bytes": 12212,
+      "sha256": "f10e2677663b2334390db89b7c417d0c643942afd4ed24fe2d744ae9a6b156a9"
+    }
+  },
+  "checksum_note": "Published byte hashes differ from original-source hashes because publication metadata and portable identifiers were added. This manifest does not include its own hash."
+}

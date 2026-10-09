@@ -1,0 +1,33 @@
+name: CPU checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  cpu:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install core package and test runner
+        run: python -m pip install -e ".[dev]"
+      - name: Run synthetic CPU demo
+        run: python scripts/demo.py --output-dir work/ci-demo
+      - name: Verify public experiment statistics
+        run: python artifacts/experiment-v1/verify_results.py
+      - name: Run lightweight checks
+        run: |
+          python -m unittest discover -s tests -p test_inference.py -v
+          python -m unittest discover -s tests -p test_evaluation.py -v
+          python -m unittest discover -s tests -p test_data_preparation.py -v
+          python -m pytest -q tests/test_experiment_preparation.py tests/test_effect_summary.py

@@ -1,0 +1,22 @@
+{
+  "mode": "train",
+  "student_model": "/root/autodl-tmp/models/Qwen3.5-9B",
+  "teacher_model": "/root/autodl-tmp/models/Qwen3.8-27B",
+  "train_file": "/root/autodl-tmp/datasets/BIRD/processed/train.jsonl",
+  "output_dir": "/root/autodl-tmp/runs/opd-pilot-20",
+  "server_url": "http://127.0.0.1:8001",
+  "group_port": 51216,
+  "seed": 42,
+  "max_steps": 20,
+  "max_seq_length": 4096,
+  "max_new_tokens": 512,
+  "gradient_accumulation_steps": 1,
+  "kl_chunk_tokens": 8,
+  "lora_rank": 8,
+  "lora_alpha": 16,
+  "learning_rate": 0.00002,
+  "max_grad_norm": 1.0,
+  "verify_greedy_tokens": 1,
+  "initial_verify_greedy_tokens": 8,
+  "save_steps": 5
+}

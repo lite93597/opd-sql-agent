@@ -1,0 +1,5 @@
+# Preserve source/provenance hashes exactly on every checkout platform.
+* -text
+*.png binary
+# Matplotlib's SVG path writer uses spaces as path-command separators.
+assets/*.svg whitespace=-blank-at-eol

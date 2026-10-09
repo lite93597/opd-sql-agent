@@ -1,0 +1,795 @@
+{
+  "status": "complete",
+  "protocol_verified": true,
+  "generated_at": "2026-10-04T16:46:20.715340+00:00",
+  "run_dir": "experiment:/runs/effect-experiment-v1",
+  "metric": "bird_execution_set_equality",
+  "official_harness": false,
+  "total": 300,
+  "database_count": 11,
+  "database_question_counts": {
+    "california_schools": 18,
+    "card_games": 37,
+    "codebase_community": 36,
+    "debit_card_specializing": 12,
+    "european_football_2": 26,
+    "financial": 20,
+    "formula_1": 34,
+    "student_club": 31,
+    "superhero": 25,
+    "thrombosis_prediction": 33,
+    "toxicology": 28
+  },
+  "evaluation_protocol": {
+    "records_sha256": "266d474cba7b8b009e4de801f8e740e2277feb23ba0a7478c6821f88609dc863",
+    "prompt_ids_sha256": "544d18a252e54d07905572254ce3b3d96f98d113e831688d03c48aba7b1d61eb",
+    "generation_settings": {
+      "max_new_tokens": 512,
+      "temperature": 0.0,
+      "seed": 42,
+      "top_p": 1.0,
+      "top_k": -1,
+      "min_p": 0.0,
+      "repetition_penalty": 1.0,
+      "presence_penalty": 0.0,
+      "frequency_penalty": 0.0,
+      "http_workers": 1,
+      "repair_attempts": 0
+    },
+    "engine_settings": {
+      "physical_gpu": 1,
+      "tensor_parallel_size": 1,
+      "dtype": "bfloat16",
+      "model_impl": "vllm",
+      "language_model_only": true,
+      "enforce_eager": true,
+      "max_model_len": 16384,
+      "max_num_seqs": 1,
+      "gpu_memory_utilization": 0.75,
+      "generation_config": "vllm",
+      "weight_transfer_backend": "nccl"
+    },
+    "launcher_sha256": "1b0e78d71c7ea9fd1aa9ecf1b6fa34a3f268687026ea3b4eea3a488b3690e9aa",
+    "reference_id_sha256": "de83cb4f4830b91c710e0cb47d066da525d1deb8281226b985d0ffd04f43b4f4",
+    "execution_limits": {
+      "timeout_seconds": 30,
+      "max_rows": 100000,
+      "max_result_bytes": 16777216,
+      "timeout_scope": "per query subprocess including startup and IPC"
+    }
+  },
+  "gold_diagnostics": {
+    "valid_gold": 299,
+    "invalid_gold": 1,
+    "status_counts": {
+      "ok": 299,
+      "timeout": 1
+    },
+    "invalid_gold_ids": [
+      "dev:518"
+    ],
+    "invalid_gold_records": [
+      {
+        "id": "dev:518",
+        "db_id": "card_games",
+        "execution": {
+          "status": "timeout",
+          "columns": [],
+          "row_count": null,
+          "error": "SQLite subprocess exceeded 30s wall-clock deadline",
+          "hard_timeout": true
+        }
+      }
+    ],
+    "main_denominator": 300,
+    "all_arm_non_timing_diagnostics_identical": true,
+    "comparison_excluded_fields": [
+      "elapsed_seconds",
+      "worker_elapsed_seconds"
+    ],
+    "verification_scope": "Recorded execution metadata; excludes timers. Does not establish a shared SQL-result-row cache."
+  },
+  "scores": {
+    "base": {
+      "correct": 150,
+      "total": 300,
+      "accuracy": 0.5,
+      "accuracy_percent": 50.0,
+      "valid_gold": 299,
+      "invalid_gold": 1,
+      "gold_status_counts": {
+        "ok": 299,
+        "timeout": 1
+      },
+      "input_and_generation_diagnostics": {
+        "missing_predictions": 0,
+        "duplicate_predictions": 0,
+        "generation_failures": 0,
+        "unknown_prediction_ids": 0,
+        "malformed_predictions": 0
+      },
+      "generation_length_limits": 0,
+      "sql_execution_status_counts": {
+        "ok": 273,
+        "error": 26,
+        "result_limit": 1
+      }
+    },
+    "teacher": {
+      "correct": 193,
+      "total": 300,
+      "accuracy": 0.6433333333333333,
+      "accuracy_percent": 64.33333333333333,
+      "valid_gold": 299,
+      "invalid_gold": 1,
+      "gold_status_counts": {
+        "ok": 299,
+        "timeout": 1
+      },
+      "input_and_generation_diagnostics": {
+        "missing_predictions": 0,
+        "duplicate_predictions": 0,
+        "generation_failures": 0,
+        "unknown_prediction_ids": 0,
+        "malformed_predictions": 0
+      },
+      "generation_length_limits": 1,
+      "sql_execution_status_counts": {
+        "ok": 295,
+        "error": 5
+      }
+    },
+    "warm": {
+      "correct": 163,
+      "total": 300,
+      "accuracy": 0.5433333333333333,
+      "accuracy_percent": 54.333333333333336,
+      "valid_gold": 299,
+      "invalid_gold": 1,
+      "gold_status_counts": {
+        "ok": 299,
+        "timeout": 1
+      },
+      "input_and_generation_diagnostics": {
+        "missing_predictions": 0,
+        "duplicate_predictions": 0,
+        "generation_failures": 0,
+        "unknown_prediction_ids": 0,
+        "malformed_predictions": 0
+      },
+      "generation_length_limits": 0,
+      "sql_execution_status_counts": {
+        "ok": 268,
+        "error": 32
+      }
+    },
+    "continued-sft": {
+      "correct": 162,
+      "total": 300,
+      "accuracy": 0.54,
+      "accuracy_percent": 54.0,
+      "valid_gold": 299,
+      "invalid_gold": 1,
+      "gold_status_counts": {
+        "ok": 299,
+        "timeout": 1
+      },
+      "input_and_generation_diagnostics": {
+        "missing_predictions": 0,
+        "duplicate_predictions": 0,
+        "generation_failures": 0,
+        "unknown_prediction_ids": 0,
+        "malformed_predictions": 0
+      },
+      "generation_length_limits": 0,
+      "sql_execution_status_counts": {
+        "error": 22,
+        "ok": 278
+      }
+    },
+    "opd": {
+      "correct": 182,
+      "total": 300,
+      "accuracy": 0.6066666666666667,
+      "accuracy_percent": 60.66666666666667,
+      "valid_gold": 299,
+      "invalid_gold": 1,
+      "gold_status_counts": {
+        "ok": 299,
+        "timeout": 1
+      },
+      "input_and_generation_diagnostics": {
+        "missing_predictions": 0,
+        "duplicate_predictions": 0,
+        "generation_failures": 0,
+        "unknown_prediction_ids": 0,
+        "malformed_predictions": 0
+      },
+      "generation_length_limits": 0,
+      "sql_execution_status_counts": {
+        "ok": 284,
+        "error": 16
+      }
+    }
+  },
+  "paired_comparisons": {
+    "opd_vs_base": {
+      "total": 300,
+      "gained": 46,
+      "lost": 14,
+      "gained_ids": [
+        "dev:1012",
+        "dev:1069",
+        "dev:108",
+        "dev:1111",
+        "dev:114",
+        "dev:1153",
+        "dev:1174",
+        "dev:1190",
+        "dev:1192",
+        "dev:1208",
+        "dev:1209",
+        "dev:1230",
+        "dev:1261",
+        "dev:1277",
+        "dev:1327",
+        "dev:1334",
+        "dev:1358",
+        "dev:1365",
+        "dev:1383",
+        "dev:1450",
+        "dev:1500",
+        "dev:1505",
+        "dev:155",
+        "dev:233",
+        "dev:303",
+        "dev:315",
+        "dev:32",
+        "dev:321",
+        "dev:34",
+        "dev:382",
+        "dev:409",
+        "dev:424",
+        "dev:471",
+        "dev:521",
+        "dev:545",
+        "dev:553",
+        "dev:598",
+        "dev:78",
+        "dev:830",
+        "dev:845",
+        "dev:858",
+        "dev:897",
+        "dev:899",
+        "dev:911",
+        "dev:977",
+        "dev:982"
+      ],
+      "lost_ids": [
+        "dev:1038",
+        "dev:1186",
+        "dev:122",
+        "dev:1315",
+        "dev:1404",
+        "dev:1429",
+        "dev:236",
+        "dev:481",
+        "dev:541",
+        "dev:578",
+        "dev:654",
+        "dev:79",
+        "dev:939",
+        "dev:999"
+      ],
+      "delta_pp": 10.666666666666666,
+      "by_database": {
+        "california_schools": {
+          "total": 18,
+          "gained": 3,
+          "lost": 1,
+          "delta_pp": 11.11111111111111
+        },
+        "card_games": {
+          "total": 37,
+          "gained": 5,
+          "lost": 1,
+          "delta_pp": 10.81081081081081
+        },
+        "codebase_community": {
+          "total": 36,
+          "gained": 3,
+          "lost": 3,
+          "delta_pp": 0.0
+        },
+        "debit_card_specializing": {
+          "total": 12,
+          "gained": 2,
+          "lost": 0,
+          "delta_pp": 16.666666666666668
+        },
+        "european_football_2": {
+          "total": 26,
+          "gained": 2,
+          "lost": 1,
+          "delta_pp": 3.8461538461538463
+        },
+        "financial": {
+          "total": 20,
+          "gained": 3,
+          "lost": 1,
+          "delta_pp": 10.0
+        },
+        "formula_1": {
+          "total": 34,
+          "gained": 7,
+          "lost": 2,
+          "delta_pp": 14.705882352941176
+        },
+        "student_club": {
+          "total": 31,
+          "gained": 6,
+          "lost": 3,
+          "delta_pp": 9.67741935483871
+        },
+        "superhero": {
+          "total": 25,
+          "gained": 2,
+          "lost": 0,
+          "delta_pp": 8.0
+        },
+        "thrombosis_prediction": {
+          "total": 33,
+          "gained": 9,
+          "lost": 1,
+          "delta_pp": 24.242424242424242
+        },
+        "toxicology": {
+          "total": 28,
+          "gained": 4,
+          "lost": 1,
+          "delta_pp": 10.714285714285714
+        }
+      },
+      "bootstrap": {
+        "method": "paired database-cluster percentile bootstrap; question-weighted per draw",
+        "seed": 20261004,
+        "replicates": 2000,
+        "database_clusters": 11,
+        "ci95_pp": [
+          6.733501088624764,
+          15.018873403019741
+        ],
+        "bootstrap_mean_pp": 10.700463346760381,
+        "scope": "Resamples observed databases with replacement, preserving all within-database pairs. Does not include training-seed, checkpoint-selection or backend numerical uncertainty."
+      }
+    },
+    "opd_vs_warm": {
+      "total": 300,
+      "gained": 32,
+      "lost": 13,
+      "gained_ids": [
+        "dev:1012",
+        "dev:1105",
+        "dev:1111",
+        "dev:114",
+        "dev:1169",
+        "dev:1190",
+        "dev:1261",
+        "dev:13",
+        "dev:1450",
+        "dev:1452",
+        "dev:1473",
+        "dev:1500",
+        "dev:151",
+        "dev:161",
+        "dev:224",
+        "dev:233",
+        "dev:254",
+        "dev:258",
+        "dev:266",
+        "dev:278",
+        "dev:471",
+        "dev:56",
+        "dev:78",
+        "dev:792",
+        "dev:830",
+        "dev:845",
+        "dev:858",
+        "dev:881",
+        "dev:897",
+        "dev:926",
+        "dev:977",
+        "dev:982"
+      ],
+      "lost_ids": [
+        "dev:1188",
+        "dev:1270",
+        "dev:1281",
+        "dev:1315",
+        "dev:1318",
+        "dev:135",
+        "dev:1484",
+        "dev:1526",
+        "dev:1528",
+        "dev:311",
+        "dev:478",
+        "dev:541",
+        "dev:578"
+      ],
+      "delta_pp": 6.333333333333333,
+      "by_database": {
+        "california_schools": {
+          "total": 18,
+          "gained": 3,
+          "lost": 0,
+          "delta_pp": 16.666666666666668
+        },
+        "card_games": {
+          "total": 37,
+          "gained": 1,
+          "lost": 1,
+          "delta_pp": 0.0
+        },
+        "codebase_community": {
+          "total": 36,
+          "gained": 0,
+          "lost": 2,
+          "delta_pp": -5.555555555555555
+        },
+        "debit_card_specializing": {
+          "total": 12,
+          "gained": 2,
+          "lost": 3,
+          "delta_pp": -8.333333333333334
+        },
+        "european_football_2": {
+          "total": 26,
+          "gained": 2,
+          "lost": 0,
+          "delta_pp": 7.6923076923076925
+        },
+        "financial": {
+          "total": 20,
+          "gained": 3,
+          "lost": 1,
+          "delta_pp": 10.0
+        },
+        "formula_1": {
+          "total": 34,
+          "gained": 7,
+          "lost": 0,
+          "delta_pp": 20.58823529411765
+        },
+        "student_club": {
+          "total": 31,
+          "gained": 2,
+          "lost": 2,
+          "delta_pp": 0.0
+        },
+        "superhero": {
+          "total": 25,
+          "gained": 3,
+          "lost": 0,
+          "delta_pp": 12.0
+        },
+        "thrombosis_prediction": {
+          "total": 33,
+          "gained": 3,
+          "lost": 3,
+          "delta_pp": 0.0
+        },
+        "toxicology": {
+          "total": 28,
+          "gained": 6,
+          "lost": 1,
+          "delta_pp": 17.857142857142858
+        }
+      },
+      "bootstrap": {
+        "method": "paired database-cluster percentile bootstrap; question-weighted per draw",
+        "seed": 20261004,
+        "replicates": 2000,
+        "database_clusters": 11,
+        "ci95_pp": [
+          0.9613853503184714,
+          12.251688349082533
+        ],
+        "bootstrap_mean_pp": 6.378457591288416,
+        "scope": "Resamples observed databases with replacement, preserving all within-database pairs. Does not include training-seed, checkpoint-selection or backend numerical uncertainty."
+      }
+    },
+    "opd_vs_continued_sft": {
+      "total": 300,
+      "gained": 33,
+      "lost": 13,
+      "gained_ids": [
+        "dev:1012",
+        "dev:1101",
+        "dev:114",
+        "dev:1169",
+        "dev:1190",
+        "dev:1261",
+        "dev:13",
+        "dev:1450",
+        "dev:1452",
+        "dev:1458",
+        "dev:1473",
+        "dev:1500",
+        "dev:155",
+        "dev:161",
+        "dev:224",
+        "dev:233",
+        "dev:254",
+        "dev:266",
+        "dev:278",
+        "dev:471",
+        "dev:598",
+        "dev:62",
+        "dev:775",
+        "dev:78",
+        "dev:792",
+        "dev:830",
+        "dev:845",
+        "dev:858",
+        "dev:897",
+        "dev:926",
+        "dev:977",
+        "dev:982",
+        "dev:987"
+      ],
+      "lost_ids": [
+        "dev:1270",
+        "dev:1281",
+        "dev:1315",
+        "dev:1318",
+        "dev:135",
+        "dev:1429",
+        "dev:1528",
+        "dev:163",
+        "dev:311",
+        "dev:478",
+        "dev:541",
+        "dev:578",
+        "dev:924"
+      ],
+      "delta_pp": 6.666666666666667,
+      "by_database": {
+        "california_schools": {
+          "total": 18,
+          "gained": 3,
+          "lost": 0,
+          "delta_pp": 16.666666666666668
+        },
+        "card_games": {
+          "total": 37,
+          "gained": 1,
+          "lost": 1,
+          "delta_pp": 0.0
+        },
+        "codebase_community": {
+          "total": 36,
+          "gained": 1,
+          "lost": 2,
+          "delta_pp": -2.7777777777777777
+        },
+        "debit_card_specializing": {
+          "total": 12,
+          "gained": 2,
+          "lost": 1,
+          "delta_pp": 8.333333333333334
+        },
+        "european_football_2": {
+          "total": 26,
+          "gained": 1,
+          "lost": 0,
+          "delta_pp": 3.8461538461538463
+        },
+        "financial": {
+          "total": 20,
+          "gained": 3,
+          "lost": 2,
+          "delta_pp": 5.0
+        },
+        "formula_1": {
+          "total": 34,
+          "gained": 7,
+          "lost": 1,
+          "delta_pp": 17.647058823529413
+        },
+        "student_club": {
+          "total": 31,
+          "gained": 3,
+          "lost": 3,
+          "delta_pp": 0.0
+        },
+        "superhero": {
+          "total": 25,
+          "gained": 4,
+          "lost": 0,
+          "delta_pp": 16.0
+        },
+        "thrombosis_prediction": {
+          "total": 33,
+          "gained": 3,
+          "lost": 2,
+          "delta_pp": 3.0303030303030303
+        },
+        "toxicology": {
+          "total": 28,
+          "gained": 5,
+          "lost": 1,
+          "delta_pp": 14.285714285714286
+        }
+      },
+      "bootstrap": {
+        "method": "paired database-cluster percentile bootstrap; question-weighted per draw",
+        "seed": 20261004,
+        "replicates": 2000,
+        "database_clusters": 11,
+        "ci95_pp": [
+          2.294894460516447,
+          11.538808664259927
+        ],
+        "bootstrap_mean_pp": 6.763766134306202,
+        "scope": "Resamples observed databases with replacement, preserving all within-database pairs. Does not include training-seed, checkpoint-selection or backend numerical uncertainty."
+      }
+    }
+  },
+  "teacher_gap": {
+    "teacher_minus_base_pp": 14.333333333333332,
+    "total_pipeline_gap_closed_fraction": 0.7441860465116281,
+    "sft_warm_gap_closed_fraction": 0.3023255813953489,
+    "opd_additional_vs_warm_gap_fraction": 0.44186046511627924,
+    "opd_vs_continued_sft_gap_fraction": 0.4651162790697674,
+    "undefined_reason": null,
+    "notes": "Total pipeline gain includes SFT warm-up and cannot be attributed to OPD alone. Fractions are not clipped: negative values represent regression, values >1 exceed the observed teacher."
+  },
+  "training_lineage": {
+    "warm": {
+      "source_checkpoint": "experiment:/runs/effect-experiment-v1/sft-warmup/checkpoint-300",
+      "selected_step": 300,
+      "training_budget_steps": 300,
+      "effective_batch": 4,
+      "training_seed": 42,
+      "learning_rate": 5e-05,
+      "data_sha256": "4bd32ed408d57406f809bfba70cbdbb16b4e19aae3816cd349c29b2af1ff2833",
+      "checkpoint_complete_sha256": "88a8f3847def3a91b4348e85e365eee806ef66d0e1d1d653279c417289c4f545",
+      "completion_evidence": {
+        "source": "trainer_report_pass",
+        "reported_status": "pass",
+        "reported_step": 300
+      },
+      "effective_merged_weight_sha256": "adea4ee7d8ee8e5c5fcfce67a5c16a1a41e5d848c3cf403faccc6a11e56771ba",
+      "parent_training_sync_verified": false,
+      "selected_internal_validation_accuracy": 0.55,
+      "internal_validation_records_sha256": "4156ffce1dc2f97674796440737cb00cd60515796c00d8abd2c9700df61fe39c",
+      "training_completion_tokens": 63628,
+      "selected_checkpoint_completion_tokens": 63628,
+      "reported_last_training_process_elapsed_seconds": 750.9147954247892
+    },
+    "continued-sft": {
+      "source_checkpoint": "experiment:/runs/effect-experiment-v1/continued-sft/checkpoint-300",
+      "selected_step": 300,
+      "training_budget_steps": 300,
+      "effective_batch": 4,
+      "training_seed": 43,
+      "learning_rate": 2e-05,
+      "data_sha256": "4bd32ed408d57406f809bfba70cbdbb16b4e19aae3816cd349c29b2af1ff2833",
+      "checkpoint_complete_sha256": "3075a7dc3189948333e790e119af3be9452cadd838622b984574d79d38e3f7bc",
+      "completion_evidence": {
+        "source": "trainer_report_pass",
+        "reported_status": "pass",
+        "reported_step": 300
+      },
+      "effective_merged_weight_sha256": "67a14f0e99942e7bbf2dc6b5aabb90b44cc961d13f867272c76ac7a311e98b0b",
+      "parent_training_sync_verified": false,
+      "selected_internal_validation_accuracy": 0.625,
+      "internal_validation_records_sha256": "4156ffce1dc2f97674796440737cb00cd60515796c00d8abd2c9700df61fe39c",
+      "training_completion_tokens": 63747,
+      "selected_checkpoint_completion_tokens": 63747,
+      "reported_last_training_process_elapsed_seconds": 764.0000036023557
+    },
+    "opd": {
+      "source_checkpoint": "experiment:/runs/effect-experiment-v1/opd-1e-5/checkpoint-300",
+      "selected_step": 300,
+      "training_budget_steps": 300,
+      "effective_batch": 4,
+      "training_seed": 43,
+      "learning_rate": 1e-05,
+      "data_sha256": "4bd32ed408d57406f809bfba70cbdbb16b4e19aae3816cd349c29b2af1ff2833",
+      "checkpoint_complete_sha256": "1e7ced421077d4c24389d7b460d4dc9ba33d37324b8ec72821b4573673874671",
+      "completion_evidence": {
+        "source": "trainer_report_pass",
+        "reported_status": "pass",
+        "reported_step": 300
+      },
+      "effective_merged_weight_sha256": "fe34a2c2bc532856a0ac4b600a4fec6554b57295e1e47003eab49fcfcf2b7c90",
+      "parent_training_sync_verified": true,
+      "selected_internal_validation_accuracy": 0.5666666666666667,
+      "internal_validation_records_sha256": "4156ffce1dc2f97674796440737cb00cd60515796c00d8abd2c9700df61fe39c",
+      "training_completion_tokens": 62885,
+      "selected_checkpoint_completion_tokens": 62885,
+      "reported_last_training_process_elapsed_seconds": 5253.666140358895
+    }
+  },
+  "matched_budget": {
+    "optimizer_horizon_steps_per_branch": 300,
+    "effective_batch": 4,
+    "selected_checkpoint_steps_equal": true,
+    "notes": "Both branches trained to the same declared horizon from the same SFT parent/pool. Validation may choose different checkpoint steps. Output tokens, wall time and total hyperparameter-search compute are not asserted equal."
+  },
+  "conclusions": {
+    "student_pipeline_improved_over_raw_base": true,
+    "opd_increment_over_warm_and_continued_sft": true,
+    "opd_vs_control_ci95_excludes_zero_on_positive_side": true,
+    "attribution": "Raw-base to final OPD improvement includes SFT warm-up; OPD contribution must be reported separately against warm and matched continued SFT."
+  },
+  "limits": [
+    "Single training seed per selected branch; only 11 observed final-test databases.",
+    "Fixed held-out subset, not a full BIRD dev or independent benchmark submission.",
+    "Percentile cluster intervals are descriptive with few clusters; they do not establish reproducibility across seeds.",
+    "Invalid gold executions count as incorrect for every arm in the fixed question denominator; model correctness on those IDs is not measured.",
+    "Intervals omit checkpoint/LR-selection variability, greedy backend numerical effects and model-generation training variability."
+  ],
+  "input_sha256": {
+    "frozen-selection.json": "3f8f883c66b06b768aa8fa2c482be71247b84c2e58a1b43343bddd3bf5b9ab37",
+    "outcome.json": "3c1ffac3fe54000728fa42e38cc4e1f5b5c81e9418a478b0687b58883423bedd",
+    "base": {
+      "report.json": "cc3550eb6f7b7453fff66cef36e373c652f6f199e39e77981a290c90e8cbd40b",
+      "manifest.json": "7e60759fe3d6a731c092ad400d90633e08a506b40310ed2435c3352b4919dbf1",
+      "status.json": "27d06d416d23ed86dae0b6630550b9e5195302cbf501ce2f18d77ff1ff7ace30"
+    },
+    "teacher": {
+      "report.json": "ece2f08b64955d4cb2c2856e8abd6c4949abc72e0e3aebf89c0cd7452a10774e",
+      "manifest.json": "2c223cf436c50104ffc2941f6d991647f0e7a33651657665830828771c2fc418",
+      "status.json": "e90779f9585b1d3af78e72bf3a859f4eb6447b1bc3da8718186f824c762dffcf"
+    },
+    "warm": {
+      "report.json": "2829685103b2fec305f84f1e20fde432629fbfa12d7ec74f103f972bfa97ca7a",
+      "manifest.json": "a72cfb8516ace0e6fb51b430fbb774c6cc2522ae18a290617d7d59f0995d7086",
+      "status.json": "f4fa63be5cac7d5e87cce1e2a98949a83c0c8d1068f679a9c80d75e069f7325e"
+    },
+    "continued-sft": {
+      "report.json": "bac29f898bdd7f825d36fe66b3a9fd3237cf1fabf833e2bcb74d962b4b9b9500",
+      "manifest.json": "739a41309247eaa28bda4f468800f7264dfd3ea2cfd83f152732f402f44a46c9",
+      "status.json": "9dcfa0bf6a121476266818d5de83cfb7b960507dedc362c778ff47b6479a047b"
+    },
+    "opd": {
+      "report.json": "58e7c7f13e04739c52c8ccb91fa1aebca0dff520cc847cbbbe37285ad46f0c92",
+      "manifest.json": "238947250f6cdb1864b44a73a897073dd8563b71e228f004407ae1527e19ee08",
+      "status.json": "3734ed50d33cb555ec39966059cebd829421d2afb96ba69cc5f7265334964dae"
+    }
+  },
+  "_publication_provenance": {
+    "format": "public-derived-v1",
+    "source_filename": "effect-summary.json",
+    "original_sha256": "7e58e0228f2099731e16d61640c1a3976653f140813b807c6959554844f1a0a7",
+    "original_bytes": 22643,
+    "transformation": "Absolute deployment paths replaced by portable logical identifiers. All other source values, statistics, question IDs and SHA values are retained. No raw dataset content or model weights are included.",
+    "path_identifier_semantics": {
+      "experiment:": "Experiment/run-relative logical identity, not a downloadable checkpoint.",
+      "data:": "External dataset-relative identity; obtain BIRD separately.",
+      "project:": "Project-relative source identity.",
+      "source:": "Other external source basename."
+    },
+    "rewritten_fields": [
+      {
+        "json_pointer": "/run_dir",
+        "published_identifier": "experiment:/runs/effect-experiment-v1"
+      },
+      {
+        "json_pointer": "/training_lineage/warm/source_checkpoint",
+        "published_identifier": "experiment:/runs/effect-experiment-v1/sft-warmup/checkpoint-300"
+      },
+      {
+        "json_pointer": "/training_lineage/continued-sft/source_checkpoint",
+        "published_identifier": "experiment:/runs/effect-experiment-v1/continued-sft/checkpoint-300"
+      },
+      {
+        "json_pointer": "/training_lineage/opd/source_checkpoint",
+        "published_identifier": "experiment:/runs/effect-experiment-v1/opd-1e-5/checkpoint-300"
+      }
+    ],
+    "original_file_included": false
+  }
+}

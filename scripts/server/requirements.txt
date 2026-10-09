@@ -1,0 +1,15 @@
+# One compatible dependency set for both training and rollout processes.
+vllm==0.20.1
+torch==2.11.0
+trl==1.14.1
+transformers==5.18.0
+peft==0.21.2
+accelerate==1.15.0
+flash-linear-attention==0.5.2
+nvidia-cutlass-dsl==4.4.2
+cuda-toolkit[nvcc,cudart,cccl,crt,nvvm]==13.0.2
+ninja
+packaging
+psutil
+pytest
+tensorboard

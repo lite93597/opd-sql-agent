@@ -1,0 +1,15 @@
+{
+  "backend": "hf",
+  "model": "D:/DATA/Models/Qwen2.5-Coder-7B-Instruct",
+  "model_class": "causal",
+  "device": "cuda",
+  "dtype": "bfloat16",
+  "local_files_only": true,
+  "enable_thinking": false,
+  "max_input_tokens": 12288,
+  "max_new_tokens": 512,
+  "max_repairs": 0,
+  "sql_timeout_seconds": 5,
+  "max_result_rows": 10000,
+  "purpose": "7b_baseline_requires_separately_provisioned_model_and_gpu"
+}
